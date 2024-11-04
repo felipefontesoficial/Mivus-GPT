@@ -25,7 +25,7 @@ def resposta_do_bot(lista_mensagens):
 
 # Configuração do título e instrução do Streamlit
 st.title("Bem-vindo ao Chat Mivus!")
-st.write("Digite sua pergunta e receba ajuda para tomar decisões empresariais.")
+st.write("Digite sua pergunta e receba ajuda para tomar decisões.")
 
 # Inicializa o histórico de mensagens se não existir
 if 'mensagens' not in st.session_state:
