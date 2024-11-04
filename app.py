@@ -24,7 +24,7 @@ def resposta_do_bot(lista_mensagens):
     return chain.invoke({}).content
 
 # Configuração do título e instrução do Streamlit
-st.title("Bem-vindo ao Chat Mivus!")
+st.title("Bem-vindo ao Mivus GPT!")
 st.write("Digite sua pergunta e receba ajuda para tomar decisões.")
 
 # Inicializa o histórico de mensagens se não existir
