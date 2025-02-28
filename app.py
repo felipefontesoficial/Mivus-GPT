@@ -5,7 +5,7 @@ import requests
 CLIENT_ID = "1a8d872b-594c-8027-a9d6-003709543248"
 CLIENT_SECRET = "secret_PK98Ne77Y1JxRa2dC1cIFQvHJyFQp5W1RaJlDkRxvmp"
 # Defina o REDIRECT_URI conforme configurado na integração do Notion
-REDIRECT_URI = "http://localhost:8501"  # Ajuste conforme necessário
+REDIRECT_URI = "https://mivus-gpt.streamlit.app/"  # Ajuste conforme necessário
 PAGE_ID = "385257f0fa39428fb5413c5b87de7d8c"
 
 def exchange_code_for_token(auth_code):
