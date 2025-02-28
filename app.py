@@ -3,7 +3,7 @@ from notion_client import Client
 import os
 
 # Carregar chave de variáveis de ambiente (recomendado)
-NOTION_KEY = os.getenv("NOTION_KEY")  # Ou st.secrets["NOTION_KEY"]
+NOTION_KEY = os.getenv("secret_sHJkVbWjFsK9ChFihQJFKyPiKdXJhuRibzWDgHLXGJz")  # Ou st.secrets["NOTION_KEY"]
 page_id = "385257f0fa39428fb5413c5b87de7d8c"
 
 try:
