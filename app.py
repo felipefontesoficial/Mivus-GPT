@@ -1,19 +1,14 @@
 import streamlit as st
 from notion_client import Client
+import os
 
-# Configuração da API
-notion = Client(auth="secret_sHJkVbWjFsK9ChFihQJFKyPiKdXJhuRibzWDgHLXGJz")  # Substitua pela sua chave
-page_id = "385257f0fa39428fb5413c5b87de7d8c"  # ID da sua página (extraído do URL)
+# Carregar chave de variáveis de ambiente (recomendado)
+NOTION_KEY = os.getenv("NOTION_KEY")  # Ou st.secrets["NOTION_KEY"]
+page_id = "385257f0fa39428fb5413c5b87de7d8c"
 
-def display_notion_content():
-    blocks = notion.blocks.children.list(block_id=page_id)["results"]
-    
-    for block in blocks:
-        # Exemplo: tratamento de títulos e textos
-        if block["type"] == "heading_1":
-            st.title(block["heading_1"]["rich_text"][0]["plain_text"])
-        elif block["type"] == "paragraph":
-            st.write(block["paragraph"]["rich_text"][0]["plain_text"])
-        # Adicione mais condições para listas, imagens, etc. (veja docs da API)
-
-display_notion_content()
+try:
+    notion = Client(auth=NOTION_KEY)
+    page = notion.pages.retrieve(page_id=page_id)
+    st.write(page)  # Exibir dados brutos para debug
+except Exception as e:
+    st.error(f"Erro na conexão com o Notion: {e}")
